@@ -4,7 +4,10 @@
   "description": "IoT project with MySQL and NodeJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client-install": "npm install",
+    "start": "node app",
+    "server": "nodemon app",
+    "client": "npm start --prefix client"
   },
   "author": "Manish Kumar",
   "license": "ISC",
