@@ -35,6 +35,8 @@ app.post("/createpost", (req, res) => {
   });
 });
 
-app.listen("3000", () => {
-  console.log("Server started on port 3000");
-});
+// PORT
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log("server started on PORT : " + PORT));
