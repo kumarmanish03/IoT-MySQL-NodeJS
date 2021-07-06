@@ -6,6 +6,12 @@ const app = express();
 
 dotenv.config();
 
+const PORT = process.env.PORT || 5000;
+
+app.get("/", (req, res) => {
+  res.send("Hello to my API serving at PORT : " + PORT);
+});
+
 app.post("/createpost", (req, res) => {
   const db = mysql.createConnection({
     host: process.env.MYSQL_HOST,
@@ -36,7 +42,5 @@ app.post("/createpost", (req, res) => {
 });
 
 // PORT
-
-const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log("server started on PORT : " + PORT));
