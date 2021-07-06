@@ -1,10 +1,16 @@
 const express = require("express");
 const mysql = require("mysql");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 const app = express();
 
 dotenv.config();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 
